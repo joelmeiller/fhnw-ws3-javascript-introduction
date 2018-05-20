@@ -25,14 +25,14 @@ const loadJQueryExamples = function ($) {
 
     const runSecondExamples = () => {
         // Check if the element exists
-        if ($('p#text').length > 0) {
+        if ($('#text').length > 0) {
             console.log('<p> Element exits')
         } else {
             console.log('No <p> Element found')
         }
 
         // Remove llst <p> element from DOM
-        $('p#text').remove()
+        $('#text').remove()
         
         // Append items with inner HTML content to a list
         const list = $('#list')
