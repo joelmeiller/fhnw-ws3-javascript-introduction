@@ -51,6 +51,7 @@ const loadJQueryExamples = function ($) {
     };
 
     // Litte animation based on jQuery functions
+    // REMARK: use jQuery animations instead https://api.jquery.com/animate/
     const moveCircle = () => {
         $('#circleButton').off('click')
 
