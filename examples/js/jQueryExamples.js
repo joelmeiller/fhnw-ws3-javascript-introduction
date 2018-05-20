@@ -1,4 +1,4 @@
-var loadJQueryExamples = function ($) {
+const loadJQueryExamples = function ($) {
 
     const runFirstExamples = () => {
         // Select DOM element
@@ -48,24 +48,52 @@ var loadJQueryExamples = function ($) {
 
         // Add a class to an object
         $('p[data-hook=newText]').last().addClass('mark-text');
-
-        // Attach an event listener
-        $('#animateCircle').on('click', e => moveCircle(e))
     };
 
-    // OnClick Event with event arguments
-    const moveCircle = (e) => {
-        console.log(e.target);
+    // Litte animation based on jQuery functions
+    const moveCircle = () => {
         $('#circleButton').off('click')
-        for(i=0; i<10; i++) {
+
+        console.log('Move Circle')
+        
+        const circle = $('#circle')
+        moveElementRight(circle)
+    }
+
+    // Recursive functions to repaint the circles position after a short period of waiting
+    const moveElementRight = element => {
+        const position = element.offset()
+        
+        if (position.left > 900) {
+            moveElementLeft(element)
+        } else {
             setTimeout(() => {
-                $('circle')
-            }, 200)
+                element.offset({ left: position.left + 20, top: position.top + 5 })
+                moveElementRight(element)
+            }, 50)
         }
     }
 
+    const moveElementLeft = element => {
+        const position = element.offset()
+        
+        if (position.left <= 600) {
+            element.offset({ left: 600 })
+            $('#circleButton').on('click', () => moveCircle())
+        } else {
+            setTimeout(() => {
+                element.offset({ left: position.left - 20, top: position.top - 5 })
+                moveElementLeft(element)
+            }, 50)
+        }
+    }
+
+    // Document Ready function
     $(document).ready(() => {    
         $('#activateButton1').on('click', () => runFirstExamples())
         $('#activateButton2').on('click', () => runSecondExamples())
+
+        // Attach an event listener
+        $('#circleButton').on('click', () => moveCircle())     
     });
 };

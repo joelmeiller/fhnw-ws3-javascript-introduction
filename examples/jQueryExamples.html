@@ -16,15 +16,18 @@
   <h1>Common JQuery Examples</h1>
   <p>Press the button to see it in action</p>
 
-  <button class="activate-button" id="activateButton1">See jQuery 1st part in Action</button>
+  <button id="activateButton1">See jQuery 1st part in Action</button>
 
-  <button class="activate-button" id="activateButton2">See jQuery 2nd part in Action</button>
+  <button id="activateButton2">See jQuery 2nd part in Action</button>
   
   <p id="text"></p>
 
   <ul id="list"></ul>
 
-  <button id="circleButton"><div class="circle"></div></button>
+  <div id="circle-container">
+    <button id="circleButton">Move the circle</button>
+    <div id="circle"></div>
+  </div>
 
   <script type="text/javascript">  
     loadJQueryExamples($);
