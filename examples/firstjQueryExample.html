@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<title>Example - First Script with DOM Manipulation</title>
+
+<style>
+  .blue {
+    color: blue;
+  }
+  .red {
+    color: red;
+  }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    
+  var count = 0
+
+  $(document).ready(function(){
+      console.log('Is Ready');
+
+      $("#text").text('The button has not been clicked.');
+
+      $("#countButton").click(function(){
+          count += 1;
+          $("#text").text('The button has been clicked').addClass('blue');
+          $("#boldText").html(`<b>${count} times</b>`).addClass('red');
+      });
+  });
+
+</script>
+
+<body>
+  <p>Now we use JQuery to manipulate the DOM.</p>
+  <p>Press the button to see it in action</p>
+
+  <button id="countButton">Click Me</button>
+
+  <p id="text"></p>
+  <p id="boldText"></p>
+</body>
+
+</html>
