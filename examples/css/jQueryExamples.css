@@ -1,0 +1,44 @@
+/* Text */
+.mark-text {
+    color: red;
+    font-weight: bold;
+}
+
+/* Circle */
+
+button#circleButton {
+    position: absolute;
+    top: 300px;
+    left: 600px;
+    background-color: transparent;
+    border-width: 0;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    transition: background-color 0.5s ease;
+    border-radius: 50%;
+}
+
+.circle:hover {
+    background-color: yellowgreen;
+}
+
+
+/* Buttons */
+
+.activate-button {
+    background-color: grey;
+    border: 0;
+    color: black;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    padding: 10px 20px;
+    margin: 20px 15px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+}
+.activate-button:hover {
+    background-color: yellow;
+    color: orange;   
+}

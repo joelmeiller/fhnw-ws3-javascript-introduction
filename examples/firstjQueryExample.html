@@ -1,35 +1,20 @@
 <!DOCTYPE HTML>
 <html>
 
-<title>Example - jQuery Script with DOM Manipulation</title>
+<head>
+  <title>First jQuery Example with DOM Manipulation</title>
 
-<style>
-  .blue {
-    color: blue;
-  }
-  .red {
-    color: red;
-  }
-</style>
+  <style>
+    .blue {
+      color: blue;
+    }
+    .red {
+      color: red;
+    }
+  </style>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript">  
-  var count = 0
-
-  // Wait for DOM to be loaded
-  $(document).ready(function(){
-
-      // Set initial text
-      $("#text").text('The button has not been clicked.');
-
-      // On button clicked, raise counter by 1, set new textes and change the text color
-      $("#countButton").click(function(){
-          count += 1;
-          $("#text").text('The button has been clicked').addClass('blue');
-          $("#boldText").html(`<b>${count} times</b>`).addClass('red');
-      });
-  });
-</script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
 
 <body>
   <p>Now we use JQuery to manipulate the DOM.</p>
@@ -39,6 +24,24 @@
 
   <p id="text"></p>
   <p id="boldText"></p>
+
+  <script type="text/javascript">  
+    var count = 0
+
+    // Wait for DOM to be loaded
+    $(document).ready(function(){
+
+        // Set initial text
+        $("#text").text('The button has not been clicked.');
+
+        // On button clicked, raise counter by 1, set new textes and change the text color
+        $("#countButton").click(function(){
+            count += 1;
+            $("#text").text('The button has been clicked').addClass('blue');
+            $("#boldText").html(`<b>${count} times</b>`).addClass('red');
+        });
+    });
+  </script>
 </body>
 
 </html>

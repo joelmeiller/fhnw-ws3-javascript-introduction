@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Event Handling</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <ul id="todo-list" class="list">
+        <!-- Todos come here -->
+      </ul>
+  
+      <form id="new-todo-form">
+        <input type="text" id="new-todo-text" />
+        <input type="submit" value="Add todo" />
+      </form>
+    </div>
+
+    <script>
+      $('#new-todo-form').on('submit', (event) => {
+        // Stop further event processing
+        event.preventDefault();
+
+        // Get input field
+        const newTodoInput = $('#new-todo-text')
+
+        // Get value
+        const newTodoValue = newTodoInput.val()
+
+        // Add new todo to list
+        if (newTodoValue.trim() > '') {
+          const todoList = $('#todo-list')
+          const todoItem = $('<li>')
+          todoItem.text(newTodoValue)
+          todoList.append(todoItem)
+        }
+
+        // Set input value to empty string
+        newTodoInput.val('');
+      });
+    </script>
+  </body>
+</html>
