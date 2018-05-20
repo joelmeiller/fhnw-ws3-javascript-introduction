@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 
-<title>Example - First Script with DOM Manipulation</title>
+<title>Example - jQuery Script with DOM Manipulation</title>
 
 <style>
   .blue {
@@ -13,22 +13,22 @@
 </style>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript">
-    
+<script type="text/javascript">  
   var count = 0
 
+  // Wait for DOM to be loaded
   $(document).ready(function(){
-      console.log('Is Ready');
 
+      // Set initial text
       $("#text").text('The button has not been clicked.');
 
+      // On button clicked, raise counter by 1, set new textes and change the text color
       $("#countButton").click(function(){
           count += 1;
           $("#text").text('The button has been clicked').addClass('blue');
           $("#boldText").html(`<b>${count} times</b>`).addClass('red');
       });
   });
-
 </script>
 
 <body>
