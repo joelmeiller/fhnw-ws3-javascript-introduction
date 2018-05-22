@@ -1,9 +1,3 @@
-/* Text */
-.mark-text {
-    color: red;
-    font-weight: bold;
-}
-
 /* Circle */
 #circle-container {
     position: absolute;
