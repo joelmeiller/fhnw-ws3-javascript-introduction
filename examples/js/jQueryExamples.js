@@ -25,14 +25,14 @@ const loadScripts = function ($) {
 
     const runSecondExamples = () => {
         // Check if the element exists
-        if ($('#text').length > 0) {
+        if ($('#text-remove').length > 0) {
             console.log('<p> Element exits')
         } else {
             console.log('No <p> Element found')
         }
 
         // Remove llst <p> element from DOM
-        $('#text').remove()
+        $('#text-remove').remove()
         
         // Append items with inner HTML content to a list
         const list = $('#list')
@@ -44,7 +44,7 @@ const loadScripts = function ($) {
 
         // Access CSS Object Model and change styles
         $('h1').css('color', 'blue')
-        $('h1').css('font-size', '72px')
+        $('h1').css('font-size', '48px')
 
         // Add a class to an object
         $('p[data-hook=newText]').last().addClass('mark-text');

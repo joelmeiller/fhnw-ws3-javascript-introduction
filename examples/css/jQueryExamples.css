@@ -5,6 +5,13 @@
     font-weight: bold;
 }
 
+#text-remove {
+    position: fixed;
+    top: 30px;
+    right: 100px;
+    background-color: gainsboro; 
+    padding: 10px;
+}
 
 /* Buttons */
 
